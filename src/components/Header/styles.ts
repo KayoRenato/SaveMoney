@@ -22,7 +22,12 @@ div.logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.2rem;
+    gap: 2rem;
+
+    img {
+        scale: 3;
+        rotate: 330deg;
+    }
 }
 
 div.title {
@@ -48,7 +53,11 @@ div.title {
 
 `
 export const NewTransactionButton = styled.button`
-    padding: .75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: .75rem 1rem;
     border-radius: 6px;
     background: ${props => props.theme['secondary-50']};
 
