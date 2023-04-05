@@ -13,7 +13,7 @@ export function Header(){
                     <h2>Money</h2>
                 </div>
                 </div>
-                <NewTransactionButton> <img src={logoButton} alt=""/>git New Transaction</NewTransactionButton>
+                <NewTransactionButton> <img src={logoButton} alt=""/>New Transaction</NewTransactionButton>
             </HeaderContent>
         </HeaderContainer>
     )
