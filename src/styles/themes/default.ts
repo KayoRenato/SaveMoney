@@ -12,9 +12,9 @@ export const darkTheme = {
   gray500: '#C4C4CC',
   gray600: '#E1E1E6',
   
-  'green-300': '#7FD1B9',
-  'green-500': '#69C2A7',
-  'green-700': '#54B497',
+  'successful-300': '#7FD1B9',
+  'successful-500': '#69C2A7',
+  'successful-700': '#54B497',
   
   'red-300': '#FFC1C1',
   'red-500': '#FFA6A6',
@@ -39,13 +39,13 @@ export const lightTheme = {
   white: '#FFFFFF',
   black: '#1E1E1E',
   
-  gray50: '#F5F5F5',
-  gray100: '#E1E1E6',
-  gray200: '#C4C4CC',
-  gray300: '#8D8D99',
-  gray400: '#7C7C8A',
-  gray500: '#323238',
-  gray600: '#29292E',
+  'base-50': '#F5F5F5',
+  'base-100': '#E1E1E6',
+  'base-200': '#C4C4CC',
+  'base-300': '#8D8D99',
+  'base-400': '#7C7C8A',
+  'base-500': '#323238',
+  'base-600': '#29292E',
 
   'green-300': '#7FD1B9',
   'green-500': '#69C2A7',
