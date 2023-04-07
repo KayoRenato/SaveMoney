@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
 background: ${props => props.theme['primary-100']};
-padding: 2.5rem 0 4rem;
+padding: 2.5rem 0 5rem;
 
 `
 
