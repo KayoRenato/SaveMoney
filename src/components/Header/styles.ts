@@ -2,13 +2,13 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
 background: ${props => props.theme['primary-100']};
-padding: 2.5rem 0 5rem;
+padding: 2.5rem 0 7rem;
 
 `
 
 export const HeaderContent = styled.div`
 width: 100%;
-max-width: 1120px
+max-width: 1120px;
 
 margin: 0 auto;
 padding: 0 1.5rem;
