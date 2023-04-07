@@ -55,7 +55,8 @@ div.title {
 export const NewTransactionButton = styled.button`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    min-width: 8rem;
 
     padding: .75rem 1rem;
     border-radius: 6px;
