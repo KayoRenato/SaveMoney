@@ -23,8 +23,10 @@ export const SearchFormContainer = styled.form`
 
         &:focus {
             background-color: ${props => props.theme['base-50']};
+            color: ${props => props.theme['base-600']};
+
             
-        }   
+        }
 
 
     }

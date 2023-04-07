@@ -28,10 +28,14 @@ interface SummaryCardProps {
 
 
 export const SummaryCard = styled.div<SummaryCardProps>`
-    background-color: ${props => props.theme['base-200']};
+
+    background-image: linear-gradient(25deg , ${props => props.theme['primary-200']}, ${props => props.theme['primary-300']} , ${props => props.theme['primary-200']} );
+    border: 3px solid ${props => props.colorCard === 'base' ? props.theme['secondary-300'] : props.theme['primary-300']};
+
 
     border-radius: 6px;
     padding: 1rem;
+
 
 
     header {
@@ -41,7 +45,7 @@ export const SummaryCard = styled.div<SummaryCardProps>`
         color: ${props => props.theme.white};
 
 
-        span{
+        span {
             font-size: 1.5rem;
             font-weight: bold;
             color: ${props => props.theme['base-400']};
@@ -51,7 +55,6 @@ export const SummaryCard = styled.div<SummaryCardProps>`
                 font-size: 1rem;
 
             }
-
 
         }
 
@@ -77,15 +80,12 @@ export const SummaryCard = styled.div<SummaryCardProps>`
 
         }
 
-
-
-
     }
 
     ${props => props.colorCard === 'base' &&
         css`
-            color: ${props => props.theme['base-400']};
-            background-color: ${props => props.theme['secondary-200']};
+            background-image: linear-gradient(160deg , ${props => props.theme['secondary-200']}, ${props => props.theme['secondary-400']} , ${props => props.theme['secondary-300']} );
+
         `
     }
 
