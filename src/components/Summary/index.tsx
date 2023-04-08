@@ -1,9 +1,9 @@
-import { ArrowCircleUp } from "phosphor-react";
-import { SummaryCard, SummaryContainer } from "./styles";
-
 import revenueLogo from "../../assets/sign.svg";
 import expensesLogo from "../../assets/fire.svg";
 import balanceLogo from "../../assets/safe.svg";
+
+import { SummaryCard, SummaryContainer } from "./styles";
+
 
 export function Summary() {
     return (

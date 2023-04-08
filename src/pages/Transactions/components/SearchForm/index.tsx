@@ -1,6 +1,8 @@
-import { NewTransactionButton } from "../../../../components/Header/styles";
 import SearchLogo from '../../../../assets/glass.svg'
+
 import { SearchFormContainer } from "./styles";
+
+import { NewTransactionButton } from "../../../../components/Header/styles";
 
 
 export function SearchForm(){

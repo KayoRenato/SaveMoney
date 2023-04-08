@@ -56,6 +56,7 @@ export const HeaderContent = styled.div`
     }
 
 `
+
 export const NewTransactionButton = styled.button`
     display: flex;
     align-items: center;
@@ -83,5 +84,3 @@ export const NewTransactionButton = styled.button`
     }
 
 `
-
-
