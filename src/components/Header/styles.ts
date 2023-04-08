@@ -25,6 +25,14 @@ export const HeaderContent = styled.div`
         justify-content: flex-start;
         gap: 2rem;
 
+        @media screen and (max-width: 750px) {
+            img {
+                position: absolute;
+                left: -1rem;
+                scale: .7;
+            }
+        }
+
     }
 
     div.title {

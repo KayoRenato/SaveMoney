@@ -5,6 +5,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    @media screen and (max-width: 750px) {
+        font-size: small;
+    } 
 }
 
 :focus {
