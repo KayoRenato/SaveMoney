@@ -32,10 +32,17 @@ export const Content = styled(Dialog.Content)`
 
     .title {
         display: flex;
+        align-items: center;
         gap: 1rem;
+
+
     }
 
-
+    @media screen and (max-width: 750px) {
+        h2{    
+            font-size: larger;
+        }
+    }
 
 `
 
