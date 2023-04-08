@@ -23,33 +23,34 @@ export const SummaryContainer = styled.section`
 `
 
 interface SummaryCardProps {
-    colorCard?: 'base'
+    colorCard: 'balance' | 'revenue' | 'expense'
 }
-
 
 export const SummaryCard = styled.div<SummaryCardProps>`
 
-    background-image: linear-gradient(25deg , ${props => props.theme['primary-200']}, ${props => props.theme['primary-300']} , ${props => props.theme['primary-200']} );
-    border: 3px solid ${props => props.colorCard === 'base' ? props.theme['secondary-300'] : props.theme['primary-300']};
-
-
+    border: 2px solid ${props =>
+        props.colorCard === 'balance' ?
+            props.theme['secondary-200'] : (
+                props.colorCard === 'revenue' ?
+                    props.theme['green-300'] :
+                    props.theme['red-500'])
+    };
     border-radius: 6px;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
 
-
+    color: ${props => props.theme['base-500']};
+    background-color: ${props => props.theme.white};
 
     header {
         display: flex;
         justify-content: space-between;
         align-items: center; 
-        color: ${props => props.theme.white};
-
-
+        
+        
         span {
             font-size: 1.5rem;
             font-weight: bold;
-            color: ${props => props.theme['base-400']};
-
+            
             
             @media screen and (max-width: 750px)  {
                 font-size: 1rem;
@@ -75,18 +76,11 @@ export const SummaryCard = styled.div<SummaryCardProps>`
         font-size: 2rem;
         text-align: center;
 
+
         @media screen and (max-width: 750px)  {
             font-size: 1.5rem;
 
         }
 
     }
-
-    ${props => props.colorCard === 'base' &&
-        css`
-            background-image: linear-gradient(160deg , ${props => props.theme['secondary-200']}, ${props => props.theme['secondary-400']} , ${props => props.theme['secondary-300']} );
-
-        `
-    }
-
 `

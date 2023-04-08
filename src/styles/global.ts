@@ -14,7 +14,8 @@ export const GlobalStyle = createGlobalStyle`
 
 
 body {
-    background: ${props => props.theme['primary-200']};
+    height: 100vh;
+    background-image: linear-gradient(to bottom, ${props => props.theme['primary-100']}, ${props => props.theme['primary-200']}, ${props => props.theme['primary-300']});
     color: ${props => props.theme['secondary-400']};
 
     -webkit-font-smoothing: antialiased;

@@ -8,7 +8,7 @@ export const SearchFormContainer = styled.form`
 
     input {
         flex: 1;
-        border: 2px solid ${props => props.theme['primary-300']};
+        border: 0;
         border-radius: 6px;
 
         color: ${props => props.theme['base-600']};
@@ -22,10 +22,13 @@ export const SearchFormContainer = styled.form`
         }
 
         &:focus {
-            background-color: ${props => props.theme['base-50']};
             color: ${props => props.theme['base-600']};
+            background-color: ${props => props.theme['base-50']};
+            border: none;
+        }
 
-            
+        &:active{
+            border: none;
         }
 
 
@@ -37,24 +40,23 @@ export const SearchFormContainer = styled.form`
         justify-content: flex-start;
         min-width: 8rem;
 
-        color: ${props => props.theme['white']};
-        background: ${props => props.theme['primary-300']};
+        font-weight: bold;
+        color: ${props => props.theme['base-600']};
+        background: ${props => props.theme.white};
 
         padding: .75rem 1rem;
-        border-radius: 6px;
-
-
-        font-weight: 500;
-        border: 2px solid ${props => props.theme['primary-300']};
-        box-shadow: 2px 4px 4px ${props => props.theme['primary-200']};
         
+        border: 2px solid ${props => props.theme['primary-300']};
+        border-radius: 6px;
+        box-shadow: 2px 2px 4px ${props => props.theme['primary-300']};
+        
+        transition: all 0.2s ease-in-out;
         
         &:hover{
             cursor: pointer;
 
-            background: ${props => props.theme['primary-400']};
+            background: ${props => props.theme['primary-300']};
             box-shadow: 4px 6px 6px ${props => props.theme['primary-200']};
-            transition: all 0.2s ease-in-out;
         }
 
     }
