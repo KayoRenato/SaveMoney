@@ -18,6 +18,7 @@ export const SummaryContainer = styled.section`
 
     @media screen and (max-width: 750px)  {
         grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
     }
 
 `
