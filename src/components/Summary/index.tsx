@@ -17,7 +17,7 @@ export function Summary() {
             </SummaryCard>
             <SummaryCard colorCard="revenue">
                 <header>
-                    <span>Revenue</span>
+                    <span>Revenues</span>
                     <img src={revenueLogo} alt=''/>
                 </header>
                 <strong>€ 30.00</strong>

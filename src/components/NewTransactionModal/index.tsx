@@ -27,7 +27,7 @@ export function NewTransactionModal() {
                 <FormDialog action="">
 
                     <input type="text" placeholder="Insert a description" required />
-                    <input type="number" placeholder="Insert a value" min={0} required />
+                    <input type="number" inputMode="decimal" placeholder="Insert a value" min={0} required />
                     <input type="text" placeholder="Insert a category" required />
 
                     <TransactionType>

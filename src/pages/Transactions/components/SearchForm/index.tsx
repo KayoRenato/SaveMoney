@@ -10,6 +10,7 @@ export function SearchForm(){
     return (
         <SearchFormContainer>
             <input type="text"
+            inputMode='search'
             placeholder="Find your transactions" />
             <NewTransactionButton>
                 <img src={SearchLogo} alt="" />

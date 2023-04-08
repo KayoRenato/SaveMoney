@@ -149,6 +149,10 @@ export const TransactionTypeButton = styled(RadioGroup.Item) <TransactionTypeBut
 
     cursor: pointer;
 
+    &:active, &:focus{
+        border: 0;
+    }
+
     &[data-state='checked'] {
         background: ${props => props.variant === 'revenue' ? props.theme['green-300'] : props.theme['red-300']};
     }
