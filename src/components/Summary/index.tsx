@@ -50,7 +50,7 @@ export function Summary() {
                     <span>Expenses</span>
                     <img src={expensesLogo} alt='' />
                 </header>
-                <strong>- {priceFormatter.format(summary.revenues)}</strong>
+                <strong>- {priceFormatter.format(summary.expenses)}</strong>
             </SummaryCard>
 
         </SummaryContainer>
