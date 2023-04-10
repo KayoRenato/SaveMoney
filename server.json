@@ -1,0 +1,36 @@
+{
+    "transactions": [
+        {
+            "id": 1,
+            "description": "Ticket Bus",
+            "price": 11.0,
+            "type": "outflow",
+            "category": "exchange",
+            "createdAt": "2023-04-10T02:30:48.577Z"
+        },
+        {
+            "id": 2,
+            "description": "Fish and Chips",
+            "price": 3.5,
+            "type": "outflow",
+            "category": "food",
+            "createdAt": "2023-04-09T07:32:48.577Z"
+        },
+        {
+            "id": 3,
+            "description": "5 hours cleaning",
+            "price": 58.70,
+            "type": "inflow",
+            "category": "work",
+            "createdAt": "2023-03-28T02:30:48.577Z"
+        },
+        {
+            "id": 4,
+            "description": "5 hours cleaning",
+            "price": 58.70,
+            "type": "inflow",
+            "category": "work",
+            "createdAt": "2023-03-28T02:30:48.577Z"
+        }
+    ]
+}
