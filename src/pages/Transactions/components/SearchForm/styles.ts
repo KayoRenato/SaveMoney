@@ -51,8 +51,13 @@ export const SearchFormContainer = styled.form`
         box-shadow: 2px 2px 4px ${props => props.theme['primary-300']};
         
         transition: all 0.2s ease-in-out;
+
+        &:disabled{
+            cursor: not-allowed; 
+            opacity: 0.5;
+        }
         
-        &:hover{
+        &:not(:disabled):hover{
             cursor: pointer;
 
             background: ${props => props.theme['primary-300']};
