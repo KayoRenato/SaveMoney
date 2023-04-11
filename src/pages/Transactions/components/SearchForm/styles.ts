@@ -1,69 +1,62 @@
-import styled from "styled-components";
-
+import styled from 'styled-components'
 
 export const SearchFormContainer = styled.form`
+  display: flex;
+  gap: 1rem;
 
+  input {
+    flex: 1;
+    border: 0;
+    border-radius: 6px;
+
+    color: ${(props) => props.theme['base-600']};
+    background-color: ${(props) => props.theme['primary-50']};
+
+    padding: 1rem;
+
+    &::placeholder {
+      color: ${(props) => props.theme['base-400']};
+    }
+
+    &:focus {
+      color: ${(props) => props.theme['base-600']};
+      background-color: ${(props) => props.theme['base-50']};
+      border: none;
+    }
+
+    &:active {
+      border: none;
+    }
+  }
+
+  button {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 8rem;
 
-    input {
-        flex: 1;
-        border: 0;
-        border-radius: 6px;
+    font-weight: bold;
+    color: ${(props) => props.theme['base-600']};
+    background: ${(props) => props.theme.white};
 
-        color: ${props => props.theme['base-600']};
-        background-color: ${props => props.theme['primary-50']};
-        
-        padding: 1rem;
-        
-        &::placeholder {
-            color: ${props => props.theme['base-400']};
-            
-        }
+    padding: 0.75rem 1rem;
 
-        &:focus {
-            color: ${props => props.theme['base-600']};
-            background-color: ${props => props.theme['base-50']};
-            border: none;
-        }
+    border: 2px solid ${(props) => props.theme['primary-300']};
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px ${(props) => props.theme['primary-300']};
 
-        &:active{
-            border: none;
-        }
+    transition: all 0.2s ease-in-out;
 
-
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
     }
 
-    button{
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        min-width: 8rem;
+    &:not(:disabled):hover {
+      cursor: pointer;
 
-        font-weight: bold;
-        color: ${props => props.theme['base-600']};
-        background: ${props => props.theme.white};
-
-        padding: .75rem 1rem;
-        
-        border: 2px solid ${props => props.theme['primary-300']};
-        border-radius: 6px;
-        box-shadow: 2px 2px 4px ${props => props.theme['primary-300']};
-        
-        transition: all 0.2s ease-in-out;
-
-        &:disabled{
-            cursor: not-allowed; 
-            opacity: 0.5;
-        }
-        
-        &:not(:disabled):hover{
-            cursor: pointer;
-
-            background: ${props => props.theme['primary-300']};
-            box-shadow: 4px 6px 6px ${props => props.theme['primary-200']};
-        }
-
+      background: ${(props) => props.theme['primary-300']};
+      box-shadow: 4px 6px 6px ${(props) => props.theme['primary-200']};
     }
-
+  }
 `
