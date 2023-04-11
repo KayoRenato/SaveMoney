@@ -4,29 +4,12 @@ import balanceLogo from "../../assets/safe.svg";
 
 import { SummaryCard, SummaryContainer } from "./styles";
 
-import { useContext } from "react";
-import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { priceFormatter } from "../../Utils/formatter";
+import { useSummary } from "../../hooks/useSummary";
 
 export function Summary() {
 
-    const { transactions } = useContext(TransactionsContext)
-     console.log(transactions)
-    
-    const summary = transactions.reduce(
-        (acc, transaction) => {
-            if (transaction.type === 'inflow') {
-                acc.revenues += transaction.price
-                acc.balance += transaction.price
-            } else if (transaction.type === 'outflow') {
-                acc.expenses += transaction.price
-                acc.balance -= transaction.price
-            }
-
-            return acc
-        },
-        { balance: 0, revenues: 0, expenses: 0 }
-    )
+    const summary = useSummary()
 
     return (
         <SummaryContainer>
