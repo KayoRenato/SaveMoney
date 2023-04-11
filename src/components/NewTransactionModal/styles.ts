@@ -8,8 +8,6 @@ export const Overlay = styled(Dialog.Overlay)`
     inset: 0;
     width: 100vw;
     height: 100vh;
-
-
 `
 
 export const Content = styled(Dialog.Content)`
@@ -44,7 +42,6 @@ export const Content = styled(Dialog.Content)`
             font-size: larger;
         }
     }
-
 `
 
 export const Description = styled(Dialog.Description)`
@@ -52,7 +49,6 @@ export const Description = styled(Dialog.Description)`
 `
 
 export const FormDialog = styled.form`
-
     margin-top: 1rem;
 
     display: flex;
@@ -67,7 +63,6 @@ export const FormDialog = styled.form`
 
         background: ${props => props.theme['primary-50']};
         padding: 1rem;
-
     }
 
     button[type='submit'] {
@@ -88,8 +83,13 @@ export const FormDialog = styled.form`
         background: ${props => props.theme['primary-300']};
 
         transition: all 0.2s ease-in-out;
+
+        &:disabled{
+            cursor: not-allowed;
+            opacity: 0 .5;
+        }
         
-        &:hover{
+        &:not(:disabled):hover{
             color: ${props => props.theme['white']};
             background: ${props => props.theme['primary-400']};
 
@@ -97,13 +97,10 @@ export const FormDialog = styled.form`
             cursor: pointer;
             box-shadow: 4px 6px 6px ${props => props.theme['primary-200']};
         }
-
     }
-
 `
 
 export const ClosedButton = styled(Dialog.Close)`
-
     background: transparent;
     border: 0;
     line-height: 0;
@@ -111,11 +108,15 @@ export const ClosedButton = styled(Dialog.Close)`
     cursor: pointer;
     color: ${props => props.theme['red-700']};
 
-    &:hover{
+    &:disabled{
+        cursor: not-allowed;
+        opacity: 0 .5;
+    }
+        
+    &:not(:disabled):hover{
         background-color: ${props => props.theme['primary-50']};
         border-radius: 6px;
     }
-
 `
 
 export const TransactionType = styled(RadioGroup.Root)`
@@ -123,10 +124,7 @@ export const TransactionType = styled(RadioGroup.Root)`
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: .5rem;
-
 `
-
-
 interface TransactionTypeButtonProps {
     variant: 'revenue' | 'expense'
 }
@@ -161,5 +159,4 @@ export const TransactionTypeButton = styled(RadioGroup.Item) <TransactionTypeBut
         transition: background-color 0.2s;
         background: ${props => props.theme['base-100']};
     }
-
 `

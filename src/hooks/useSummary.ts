@@ -5,7 +5,7 @@ export function useSummary() {
 
 
     const { transactions } = useContext(TransactionsContext)
-    console.log(transactions)
+    // console.log(transactions) 
 
     const summary = transactions.reduce(
         (acc, transaction) => {
