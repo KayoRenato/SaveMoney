@@ -63,6 +63,22 @@
       "price": 3,
       "createdAt": "2023-04-11T04:33:46.517Z",
       "id": 8
+    },
+    {
+      "category": "food",
+      "description": "ice",
+      "type": "expense",
+      "price": 6,
+      "createdAt": "2023-04-11T04:45:08.855Z",
+      "id": 9
+    },
+    {
+      "category": "Tur",
+      "description": "Uber Ano",
+      "type": "expense",
+      "price": 5,
+      "createdAt": "2023-04-12T22:35:57.075Z",
+      "id": 10
     }
   ]
 }
