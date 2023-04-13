@@ -24,7 +24,7 @@ export function Header() {
         <div className="logo">
           <img src={logoImg} alt="" />
         </div>
-        <Dialog.Root open={isOpen} onOpenChange={() => setIsOpen(isOpen)}>
+        <Dialog.Root open={isOpen}>
           <Dialog.Trigger asChild>
             <NewTransactionButton>
               {' '}
