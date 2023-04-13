@@ -1,84 +1,12 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "description": "Ticket Bus",
-      "price": 11,
-      "type": "expense",
-      "category": "exchange",
-      "createdAt": "2023-04-10T02:30:48.577Z"
-    },
-    {
-      "id": 2,
-      "description": "Fish and Chips",
-      "price": 3.5,
-      "type": "expense",
-      "category": "food",
-      "createdAt": "2023-04-09T07:32:48.577Z"
-    },
-    {
-      "id": 3,
-      "description": "5 hours cleaning",
-      "price": 58.7,
-      "type": "revenue",
       "category": "work",
-      "createdAt": "2023-03-28T02:30:48.577Z"
-    },
-    {
-      "id": 4,
-      "description": "5 hours cleaning",
-      "price": 58.7,
+      "description": "Teste",
       "type": "revenue",
-      "category": "work",
-      "createdAt": "2023-03-28T02:30:48.577Z"
-    },
-    {
-      "category": "work",
-      "description": "Deelopment App",
-      "type": "revenue",
-      "price": 10000,
-      "createdAt": "2023-04-11T04:12:19.785Z",
-      "id": 5
-    },
-    {
-      "category": "Tur",
-      "description": "Educação Ano",
-      "type": "expense",
-      "price": 9,
-      "createdAt": "2023-04-11T04:15:16.849Z",
-      "id": 6
-    },
-    {
-      "category": "food",
-      "description": "Hotdog",
-      "type": "expense",
-      "price": 2,
-      "createdAt": "2023-04-11T04:18:47.646Z",
-      "id": 7
-    },
-    {
-      "category": "food",
-      "description": "Coffe",
-      "type": "expense",
       "price": 3,
-      "createdAt": "2023-04-11T04:33:46.517Z",
-      "id": 8
-    },
-    {
-      "category": "food",
-      "description": "ice",
-      "type": "expense",
-      "price": 6,
-      "createdAt": "2023-04-11T04:45:08.855Z",
-      "id": 9
-    },
-    {
-      "category": "Tur",
-      "description": "Uber Ano",
-      "type": "expense",
-      "price": 5,
-      "createdAt": "2023-04-12T22:35:57.075Z",
-      "id": 10
+      "createdAt": "2023-04-13T01:48:17.283Z",
+      "id": 1
     }
   ]
 }
