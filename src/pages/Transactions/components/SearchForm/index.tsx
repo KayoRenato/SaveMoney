@@ -3,6 +3,7 @@ import SearchLogo from '../../../../assets/glass.svg'
 import { SearchFormContainer } from './styles'
 
 import { NewTransactionButton } from '../../../../components/Header/styles'
+import { memo } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -15,7 +16,7 @@ const searchFormSchema = z.object({
 
 type SearchFormInputs = z.infer<typeof searchFormSchema>
 
-export function SearchForm() {
+function SearchFormComponent() {
   const getTransactions = useContextSelector(TransactionsContext, (context) => {
     return context.getTransactions
   })
@@ -47,3 +48,8 @@ export function SearchForm() {
     </SearchFormContainer>
   )
 }
+
+// only recommend using memo when you know that changing HTML is
+//  enormous and is more expensive than comparing hooks and props changes
+
+export const SearchForm = memo(SearchFormComponent)
