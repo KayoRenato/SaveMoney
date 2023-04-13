@@ -50,23 +50,23 @@ Save Money is a web application that helps users manage their finances by keepin
 
 The following dependencies were used in this project:
 
-- "phosphor-react": a library of SVG icons for React applications.
-- "react": a JavaScript library for building user interfaces.
-- "react-dom": a package that provides DOM-specific methods for React.
-- "react-hook-form": a library for managing forms in React using hooks.
-- "react-router-dom": a library that provides routing functionality for React applications.
-- "styled-components": a library that enables developers to write CSS in JavaScript, making it easier to create and manage styled components in React.
-- "@hookform/resolvers": a package that provides resolvers for handling form validation in react-hook-form.
-- "@radix-ui/react-dialog": a package that provides dialog components for React applications.
-- "@radix-ui/react-radio-group": a package that provides radio group components for React applications.
-- "firebase": a package for integrating Firebase services in JavaScript applications.
-- "scheduler": a package that provides scheduling utilities for managing asynchronous tasks in React applications.
-- "use-context-selector": a package that provides a selector hook for reading context values in React applications.
-- "zod": a package for handling runtime type checking in JavaScript applications.
+- "phosphor-react": a library of SVG icons for React applications.  
+- "react": a JavaScript library for building user interfaces.  
+- "react-dom": a package that provides DOM-specific methods for React.  
+- "react-hook-form": a library for managing forms in React using hooks.  
+- "react-router-dom": a library that provides routing functionality for React applications.  
+- "styled-components": a library that enables developers to write CSS in JavaScript, making it easier to create and manage styled components in React.  
+- "@hookform/resolvers": a package that provides resolvers for handling form validation in react-hook-form.  
+- "@radix-ui/react-dialog": a package that provides dialog components for React applications.  
+- "@radix-ui/react-radio-group": a package that provides radio group components for React applications.  
+- "firebase": a package for integrating Firebase services in JavaScript applications.  
+- "scheduler": a package that provides scheduling utilities for managing asynchronous tasks in React applications.  
+- "use-context-selector": a package that provides a selector hook for reading context values in React applications.  
+- "zod": a package for handling runtime type checking in JavaScript applications.  
 
 ## :clapper: Show Off ##
 
-<!-- <img src="public/savemoney.gif" alt="show off application" > -->
+<img src="public/savemoney.gif" alt="show off application" >
 
 ## :checkered_flag: Starting ##
 
