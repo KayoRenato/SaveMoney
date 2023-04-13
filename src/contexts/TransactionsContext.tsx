@@ -36,7 +36,7 @@ export const TransactionsContext = createContext({} as TransactionContextType)
 export function TransactionProvider({ children }: TransactionProviderInput) {
   const [transactions, setTransactions] = useState<TransactionProps[]>([])
 
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   const getTransactions = useCallback(async (query?: string) => {
     let transactionsData: TransactionProps[] = []

@@ -72,7 +72,13 @@ export function NewTransactionModal() {
             <img src={iconTransaction} alt="" />
             <Dialog.Title>New Transaction</Dialog.Title>
           </div>
-          <ClosedButton disabled={isSubmitting}>
+          <ClosedButton
+            disabled={isSubmitting}
+            onClick={() => {
+              reset()
+              setIsOpen(false)
+            }}
+          >
             <X size={24} weight="bold" />
           </ClosedButton>
         </div>
