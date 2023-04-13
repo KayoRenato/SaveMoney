@@ -28,33 +28,41 @@
 
 ## :dart: About ##
 
-Save Money is a web application designed to help users manage their finances by keeping track of their income and expenses. Users can easily create and categorize transactions, set budgets, and view reports to get a better understanding of their overall financial health. The application is intuitive and easy to use, allowing users to quickly and efficiently manage their finances. With Save Money, users can take control of their finances and make more informed financial decisions.
+Save Money is a web application that helps users manage their finances by keeping track of their income and expenses. Users can easily create and categorize transactions in real-time, allowing for efficient and accurate record-keeping. The application also provides a comprehensive list of all registered transactions, which users can query and review. Save Money empowers users to take control of their finances by providing a convenient and organized way to track their financial transactions.
 
 ## :sparkles: Features ##
-<!-- :ballot_box_with_check: Customizable Timer: allows the user to set the timer duration in 5-minute intervals.  
-:ballot_box_with_check: Timer States: presents three timer states: completed, in progress, and suspended.  
-:ballot_box_with_check: Task Listing: displays a list of completed, suspended, or in-progress tasks.  
-:ballot_box_with_check: Integration with React Hooks: the application uses fundamental concepts of React Hooks such as useContext, useState, useEffect, useForm, and useReducer.  
-:ballot_box_with_check: Integration with third-party libraries: the application uses various third-party libraries such as react-router-dom, styled-components, date-fns, phosphor-react, and react-hook-form.  
-:ballot_box_with_check: Responsive Design: the interface adapts to different screen sizes.   
-:black_square_button:  Sound notifications: Adding sound notifications to the timer could be a helpful feature for users who want an audio cue when their timer is complete. Users could have the option to choose from different notification sounds or upload their own audio file.   -->
+:ballot_box_with_check: Transaction Management: allows users to register income and expenses transactions.
+:ballot_box_with_check: Categorization of Transactions: enables users to categorize transactions for better organization and analysis.
+:ballot_box_with_check: Balance Calculation: automatically calculates and displays the balance based on the registered transactions.
+:ballot_box_with_check: User-friendly Interface: offers an intuitive and easy-to-use interface for efficient financial management.
+:ballot_box_with_check: Form Validation: includes form validation using react-hook-form and zod for ensuring data integrity.
+:ballot_box_with_check: Integration with Firebase: integrates with Firebase for data storage and authentication functionality.
+:ballot_box_with_check: Styled Components: utilizes styled-components for easy management of CSS styles and theming.
+:ballot_box_with_check: Search and Filtering: enables users to search and filter transactions based on yours descriptions for easy data retrieval.
+:black_square_button: Data Visualization: includes charts and graphs to visually represent income, expenses, and budget information.
+:black_square_button: Multi-currency Support: allows users to manage transactions in different currencies and convert them for analysis.
+:black_square_button: Multi-user Support: allows multiple users to create and manage their own separate accounts within the application.
+
+
 
 
 ## :computer: Technologies & Requirements ##
 
 The following dependencies were used in this project:
 
-- "phosphor-react": a library of SVG icons that can be used in React applications.
-
+- "phosphor-react": a library of SVG icons for React applications.
 - "react": a JavaScript library for building user interfaces.
-
 - "react-dom": a package that provides DOM-specific methods for React.
-
 - "react-hook-form": a library for managing forms in React using hooks.
-
 - "react-router-dom": a library that provides routing functionality for React applications.
-
 - "styled-components": a library that enables developers to write CSS in JavaScript, making it easier to create and manage styled components in React.
+- "@hookform/resolvers": a package that provides resolvers for handling form validation in react-hook-form.
+- "@radix-ui/react-dialog": a package that provides dialog components for React applications.
+- "@radix-ui/react-radio-group": a package that provides radio group components for React applications.
+- "firebase": a package for integrating Firebase services in JavaScript applications.
+- "scheduler": a package that provides scheduling utilities for managing asynchronous tasks in React applications.
+- "use-context-selector": a package that provides a selector hook for reading context values in React applications.
+- "zod": a package for handling runtime type checking in JavaScript applications.
 
 ## :clapper: Show Off ##
 
@@ -74,6 +82,11 @@ $ cd <Project-Name>
 
 # Install dependencies
 $ npm i
+
+# Create Auth Firebase Project and get environment variables:
+  - apiKey 
+  - authdDomain 
+  - projectId 
 
 # Run the project
 $ npm run dev

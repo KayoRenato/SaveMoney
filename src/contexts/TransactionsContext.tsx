@@ -37,26 +37,30 @@ export function TransactionProvider({ children }: TransactionProviderInput) {
   const getTransactions = useCallback(async (query?: string) => {
     let transactionsData: TransactionProps[] = []
 
+    const transactionsRef = firebase.firestore().collection('transactions')
+
     if (query) {
       const queryLower = query.toLowerCase()
 
-      const snapshot = await firebase
-        .firestore()
-        .collection('transactions')
-        .get()
+      const snapshot = await transactionsRef.get()
 
-      const filteredData = snapshot.docs.filter((doc) => {
-        const descriptionLowercase = doc.data().description.toLowerCase()
-        return descriptionLowercase.includes(queryLower)
-      })
+      const filteredData = snapshot.docs
+        .filter((doc) => {
+          const descriptionLowercase = doc.data().description.toLowerCase()
+          return descriptionLowercase.includes(queryLower)
+        })
+        .sort((a, b) => {
+          const aCreatedAt = a.data().createdAt
+          const bCreatedAt = b.data().createdAt
+          return bCreatedAt.localeCompare(aCreatedAt)
+        })
 
       transactionsData = filteredData.map((doc) =>
         doc.data(),
       ) as TransactionProps[]
     } else {
-      const transactionsSnapshot = await firebase
-        .firestore()
-        .collection('transactions')
+      const transactionsSnapshot = await transactionsRef
+        .orderBy('createdAt', 'desc')
         .get()
 
       transactionsData = transactionsSnapshot.docs.map((doc) =>
