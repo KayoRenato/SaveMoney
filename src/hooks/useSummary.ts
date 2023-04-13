@@ -7,10 +7,10 @@ export function useSummary() {
 
   const summary = transactions.reduce(
     (acc, transaction) => {
-      if (transaction.type === 'inflow') {
+      if (transaction.type === 'revenue') {
         acc.revenues += transaction.price
         acc.balance += transaction.price
-      } else if (transaction.type === 'outflow') {
+      } else if (transaction.type === 'expense') {
         acc.expenses += transaction.price
         acc.balance -= transaction.price
       }
