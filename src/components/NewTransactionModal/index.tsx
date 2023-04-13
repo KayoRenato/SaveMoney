@@ -18,7 +18,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import { TransactionsContext } from '../../contexts/TransactionsContext'
 import { useContextSelector } from 'use-context-selector'
-import { useState } from 'react'
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
@@ -30,14 +29,16 @@ const newTransactionFormSchema = z.object({
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>
 
 export function NewTransactionModal() {
-  const [isOpen, setIsOpen] = useState(true)
-
   const createTransaction = useContextSelector(
     TransactionsContext,
     (context) => {
       return context.createTransaction
     },
   )
+
+  const setIsOpen = useContextSelector(TransactionsContext, (context) => {
+    return context.setIsOpen
+  })
 
   const {
     register,
@@ -63,73 +64,71 @@ export function NewTransactionModal() {
   }
 
   return (
-    <Dialog.Root open={isOpen} onOpenChange={() => setIsOpen(false)}>
-      <Dialog.Portal>
-        <Overlay />
-        <Content>
-          <div className="header">
-            <div className="title">
-              <img src={iconTransaction} alt="" />
-              <Dialog.Title>New Transaction</Dialog.Title>
-            </div>
-            <ClosedButton disabled={isSubmitting}>
-              <X size={24} weight="bold" />
-            </ClosedButton>
+    <Dialog.Portal>
+      <Overlay />
+      <Content>
+        <div className="header">
+          <div className="title">
+            <img src={iconTransaction} alt="" />
+            <Dialog.Title>New Transaction</Dialog.Title>
           </div>
-          <Description>
-            <p>Create a new transaction</p>
-          </Description>
+          <ClosedButton disabled={isSubmitting}>
+            <X size={24} weight="bold" />
+          </ClosedButton>
+        </div>
+        <Description>
+          <p>Create a new transaction</p>
+        </Description>
 
-          <FormDialog onSubmit={handleSubmit(handleCreateNewTransaction)}>
-            <input
-              type="text"
-              placeholder="Insert a description"
-              {...register('description')}
-            />
+        <FormDialog onSubmit={handleSubmit(handleCreateNewTransaction)}>
+          <input
+            type="text"
+            placeholder="Insert a description"
+            {...register('description')}
+          />
 
-            <input
-              type="number"
-              inputMode="decimal"
-              placeholder="Insert a value"
-              step={0.01}
-              min={0}
-              {...register('price', { valueAsNumber: true })}
-            />
+          <input
+            type="number"
+            inputMode="decimal"
+            placeholder="Insert a value"
+            step={0.01}
+            min={0}
+            {...register('price', { valueAsNumber: true })}
+          />
 
-            <input
-              type="text"
-              placeholder="Insert a category"
-              {...register('category')}
-            />
+          <input
+            type="text"
+            placeholder="Insert a category"
+            {...register('category')}
+          />
 
-            <Controller
-              control={control}
-              name="type"
-              render={({ field }) => {
-                return (
-                  <TransactionType
-                    onValueChange={field.onChange}
-                    value={field.value}
-                  >
-                    <TransactionTypeButton variant="revenue" value="revenue">
-                      <img src={iconRevenue} alt="" />
-                      Revenue
-                    </TransactionTypeButton>
-                    <TransactionTypeButton variant="expense" value="expense">
-                      <img src={iconExpense} alt="" />
-                      Expense
-                    </TransactionTypeButton>
-                  </TransactionType>
-                )
-              }}
-            />
+          <Controller
+            control={control}
+            name="type"
+            render={({ field }) => {
+              return (
+                <TransactionType
+                  onValueChange={field.onChange}
+                  value={field.value}
+                >
+                  <TransactionTypeButton variant="revenue" value="revenue">
+                    <img src={iconRevenue} alt="" />
+                    Revenue
+                  </TransactionTypeButton>
+                  <TransactionTypeButton variant="expense" value="expense">
+                    <img src={iconExpense} alt="" />
+                    Expense
+                  </TransactionTypeButton>
+                </TransactionType>
+              )
+            }}
+          />
 
-            <button type="submit" disabled={isSubmitting}>
-              Create
-            </button>
-          </FormDialog>
-        </Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+          <button type="submit" disabled={isSubmitting}>
+            Create
+          </button>
+        </FormDialog>
+      </Content>
+    </Dialog.Portal>
   )
 }

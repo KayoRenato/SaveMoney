@@ -20,9 +20,11 @@ interface CreateTransactionProps {
 }
 
 interface TransactionContextType {
+  isOpen: boolean
   transactions: TransactionProps[]
   getTransactions: (query?: string) => Promise<void>
   createTransaction: (data: CreateTransactionProps) => Promise<void>
+  setIsOpen: (isOpenModal: boolean) => void
 }
 
 interface TransactionProviderInput {
@@ -33,6 +35,8 @@ export const TransactionsContext = createContext({} as TransactionContextType)
 
 export function TransactionProvider({ children }: TransactionProviderInput) {
   const [transactions, setTransactions] = useState<TransactionProps[]>([])
+
+  const [isOpen, setIsOpen] = useState(true)
 
   const getTransactions = useCallback(async (query?: string) => {
     let transactionsData: TransactionProps[] = []
@@ -106,7 +110,13 @@ export function TransactionProvider({ children }: TransactionProviderInput) {
 
   return (
     <TransactionsContext.Provider
-      value={{ transactions, getTransactions, createTransaction }}
+      value={{
+        isOpen,
+        transactions,
+        getTransactions,
+        createTransaction,
+        setIsOpen,
+      }}
     >
       {children}
     </TransactionsContext.Provider>
