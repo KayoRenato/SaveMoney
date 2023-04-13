@@ -1,10 +1,11 @@
+import firebase from '../firebase/config'
 import { ReactNode, useEffect, useState, useCallback } from 'react'
 import { createContext } from 'use-context-selector'
-import { api } from '../lib/axios'
 
 interface TransactionProps {
-  id: number
+  id?: string
   description: string
+  descriptionLowercase: string
   price: number
   type: 'revenue' | 'expense'
   category: string
@@ -17,6 +18,7 @@ interface CreateTransactionProps {
   type: 'revenue' | 'expense'
   category: string
 }
+
 interface TransactionContextType {
   transactions: TransactionProps[]
   getTransactions: (query?: string) => Promise<void>
@@ -33,31 +35,61 @@ export function TransactionProvider({ children }: TransactionProviderInput) {
   const [transactions, setTransactions] = useState<TransactionProps[]>([])
 
   const getTransactions = useCallback(async (query?: string) => {
-    const response = await api.get('/transactions', {
-      params: {
-        _sort: 'createdAt',
-        _order: 'desc',
-        q: query,
-      },
-    })
+    let transactionsData: TransactionProps[] = []
 
-    setTransactions(response.data)
+    if (query) {
+      const queryLower = query.toLowerCase()
+
+      const snapshot = await firebase
+        .firestore()
+        .collection('transactions')
+        .get()
+
+      const filteredData = snapshot.docs.filter((doc) => {
+        const descriptionLowercase = doc.data().description.toLowerCase()
+        return descriptionLowercase.includes(queryLower)
+      })
+
+      transactionsData = filteredData.map((doc) =>
+        doc.data(),
+      ) as TransactionProps[]
+    } else {
+      const transactionsSnapshot = await firebase
+        .firestore()
+        .collection('transactions')
+        .get()
+
+      transactionsData = transactionsSnapshot.docs.map((doc) =>
+        doc.data(),
+      ) as TransactionProps[]
+    }
+
+    setTransactions(transactionsData)
   }, [])
 
   const createTransaction = useCallback(
     async (data: CreateTransactionProps) => {
       const { category, description, type, price } = data
 
-      const response = await api.post('/transactions', {
-        category,
+      const categoryUppercase = category.toUpperCase()
+      const transactionData: TransactionProps = {
+        category: categoryUppercase,
         description,
+        descriptionLowercase: description.toLowerCase(),
         type,
         price,
-        createdAt: new Date(),
-      })
+        createdAt: new Date().toISOString(),
+      }
+
+      const docRef = await firebase
+        .firestore()
+        .collection('transactions')
+        .add(transactionData)
+      const transactionDoc = await docRef.get()
+      const transaction = transactionDoc.data() as TransactionProps
 
       setTransactions((currentTransactions) => [
-        response.data,
+        transaction,
         ...currentTransactions,
       ])
     },
@@ -70,11 +102,7 @@ export function TransactionProvider({ children }: TransactionProviderInput) {
 
   return (
     <TransactionsContext.Provider
-      value={{
-        transactions,
-        getTransactions,
-        createTransaction,
-      }}
+      value={{ transactions, getTransactions, createTransaction }}
     >
       {children}
     </TransactionsContext.Provider>

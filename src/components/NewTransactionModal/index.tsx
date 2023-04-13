@@ -86,9 +86,11 @@ export function NewTransactionModal() {
             type="number"
             inputMode="decimal"
             placeholder="Insert a value"
+            step={0.01}
             min={0}
             {...register('price', { valueAsNumber: true })}
           />
+
           <input
             type="text"
             placeholder="Insert a category"
