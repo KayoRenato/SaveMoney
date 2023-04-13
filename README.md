@@ -31,17 +31,17 @@
 Save Money is a web application that helps users manage their finances by keeping track of their income and expenses. Users can easily create and categorize transactions in real-time, allowing for efficient and accurate record-keeping. The application also provides a comprehensive list of all registered transactions, which users can query and review. Save Money empowers users to take control of their finances by providing a convenient and organized way to track their financial transactions.
 
 ## :sparkles: Features ##
-:ballot_box_with_check: Transaction Management: allows users to register income and expenses transactions.
-:ballot_box_with_check: Categorization of Transactions: enables users to categorize transactions for better organization and analysis.
-:ballot_box_with_check: Balance Calculation: automatically calculates and displays the balance based on the registered transactions.
-:ballot_box_with_check: User-friendly Interface: offers an intuitive and easy-to-use interface for efficient financial management.
-:ballot_box_with_check: Form Validation: includes form validation using react-hook-form and zod for ensuring data integrity.
-:ballot_box_with_check: Integration with Firebase: integrates with Firebase for data storage and authentication functionality.
-:ballot_box_with_check: Styled Components: utilizes styled-components for easy management of CSS styles and theming.
-:ballot_box_with_check: Search and Filtering: enables users to search and filter transactions based on yours descriptions for easy data retrieval.
-:black_square_button: Data Visualization: includes charts and graphs to visually represent income, expenses, and budget information.
-:black_square_button: Multi-currency Support: allows users to manage transactions in different currencies and convert them for analysis.
-:black_square_button: Multi-user Support: allows multiple users to create and manage their own separate accounts within the application.
+:ballot_box_with_check: Transaction Management: allows users to register income and expenses transactions.  
+:ballot_box_with_check: Categorization of Transactions: enables users to categorize transactions for better organization and analysis.  
+:ballot_box_with_check: Balance Calculation: automatically calculates and displays the balance based on the registered transactions.  
+:ballot_box_with_check: User-friendly Interface: offers an intuitive and easy-to-use interface for efficient financial management.  
+:ballot_box_with_check: Form Validation: includes form validation using react-hook-form and zod for ensuring data integrity.  
+:ballot_box_with_check: Integration with Firebase: integrates with Firebase for data storage and authentication functionality.  
+:ballot_box_with_check: Styled Components: utilizes styled-components for easy management of CSS styles and theming.  
+:ballot_box_with_check: Search and Filtering: enables users to search and filter transactions based on yours descriptions for easy data retrieval.  
+:black_square_button: Data Visualization: includes charts and graphs to visually represent income, expenses, and budget information.  
+:black_square_button: Multi-currency Support: allows users to manage transactions in different currencies and convert them for analysis.  
+:black_square_button: Multi-user Support: allows multiple users to create and manage their own separate accounts within the application.  
 
 
 
