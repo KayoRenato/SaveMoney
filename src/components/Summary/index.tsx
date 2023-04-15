@@ -32,7 +32,12 @@ export function Summary() {
           <span>Expenses</span>
           <img src={expensesLogo} alt="" />
         </header>
-        <strong>- {priceFormatter.format(summary.expenses)}</strong>
+
+        <strong>
+          {priceFormatter.format(
+            summary.expenses * (summary.expenses > 0 ? -1 : 1),
+          )}
+        </strong>
       </SummaryCard>
     </SummaryContainer>
   )
